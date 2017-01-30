@@ -30,7 +30,16 @@ class BankAccount(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def complex_str(self):
-        return ba_str(self)
+        if name.startswith('t'):
+            if name[1] in 'aeiou':
+                return self.name[:1]
+            else:
+                return ''
+        elif name.startswith('p'):
+            if name[1] in 'aeiou':
+                return self.name[:1]
+            else:
+                return ''
 
     def __str__(self):
         return self.name
