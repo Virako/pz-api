@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_nose',
     'pz_api'
 ]
 
@@ -114,6 +115,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Change to nosetest for get xml reports for use in jenkins
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 
 # Static files (CSS, JavaScript, Images)
