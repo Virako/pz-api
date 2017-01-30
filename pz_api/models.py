@@ -3,6 +3,8 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import User
 
+from .views import ba_str
+
 
 class BankAccount(models.Model):
     """
@@ -26,6 +28,9 @@ class BankAccount(models.Model):
     currency = models.CharField(max_length=3)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def complex_str(self):
+        return ba_str(self)
 
     def __str__(self):
         return self.name
